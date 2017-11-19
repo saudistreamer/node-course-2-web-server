@@ -62,14 +62,23 @@ app.get('/about', (req,res) => {
   })
 });
 
+app.get('/projects', (req,res) => {
+  //res.send('About Page');
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    Message: 'Protfolio page here'
+  })
+});
+
 app.get('/bad', (req, res) => {
 
 res.send({
   errorMessage: 'Page was not found 404 ^__*',
 
 })
+});
 
-})
+
 app.listen(port, () =>{
   console.log(`Server is up on port ${port}.`);
 });
